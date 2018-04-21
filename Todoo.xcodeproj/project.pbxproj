@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A63F4B7208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4B6208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift */; };
+		4A63F4B9208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4B8208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift */; };
+		4A63F4BB208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4BA208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift */; };
+		4A63F4BE208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */; };
+		4A63F4C1208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4C0208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift */; };
 		4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */; };
 		4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F55208B70D5008FD946 /* TasksTableViewController.swift */; };
 		4A724F5A208B771D008FD946 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F59208B771D008FD946 /* CreateTaskViewController.swift */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A63F4B6208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+NSFetchedResultsControllerDelegate.swift"; sourceTree = "<group>"; };
+		4A63F4B8208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		4A63F4BA208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UIViewController.swift"; sourceTree = "<group>"; };
+		4A63F4C0208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateTaskViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A724F55208B70D5008FD946 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		4A724F59208B771D008FD946 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
@@ -41,14 +51,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A724F60208B7A51008FD946 /* UI */ = {
+		4A63F4BC208BB4CC0011B825 /* Tasks Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A63F4C2208BBE230011B825 /* Cells */,
+				4A724F55208B70D5008FD946 /* TasksTableViewController.swift */,
+				4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */,
+				4A63F4B6208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift */,
+				4A63F4B8208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift */,
+				4A63F4BA208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift */,
+			);
+			path = "Tasks Table View Controller";
+			sourceTree = "<group>";
+		};
+		4A63F4BF208BBC570011B825 /* Create Task View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A724F59208B771D008FD946 /* CreateTaskViewController.swift */,
+				4A63F4C0208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift */,
+			);
+			path = "Create Task View Controller";
+			sourceTree = "<group>";
+		};
+		4A63F4C2208BBE230011B825 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4A63F4C3208BBE7B0011B825 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
 				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
-				4A724F55208B70D5008FD946 /* TasksTableViewController.swift */,
-				4A724F59208B771D008FD946 /* CreateTaskViewController.swift */,
-				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		4A63F4C4208BBEA10011B825 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		4A724F60208B7A51008FD946 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A63F4C3208BBE7B0011B825 /* Interfaces */,
+				4A63F4BF208BBC570011B825 /* Create Task View Controller */,
+				4A63F4BC208BB4CC0011B825 /* Tasks Table View Controller */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -72,11 +127,11 @@
 		4A7DF10B208B64BA00E68B39 /* Todoo */ = {
 			isa = PBXGroup;
 			children = (
+				4A63F4C4208BBEA10011B825 /* Core Data */,
 				4A724F60208B7A51008FD946 /* UI */,
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
 				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF11B208B64BB00E68B39 /* Info.plist */,
-				4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */,
 			);
 			path = Todoo;
 			sourceTree = "<group>";
@@ -151,11 +206,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A63F4C1208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift in Sources */,
 				4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */,
+				4A63F4B7208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
 				4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */,
+				4A63F4BB208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift in Sources */,
+				4A63F4BE208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift in Sources */,
 				4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */,
 				4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */,
 				4A724F5A208B771D008FD946 /* CreateTaskViewController.swift in Sources */,
+				4A63F4B9208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
