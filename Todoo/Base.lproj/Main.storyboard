@@ -52,7 +52,9 @@
                             <outlet property="delegate" destination="26f-cO-duI" id="7cD-0e-THL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoo" id="n4g-VU-mGq"/>
+                    <navigationItem key="navigationItem" title="Todoo" id="n4g-VU-mGq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbd-q9-5qC"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hni-15-kmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
