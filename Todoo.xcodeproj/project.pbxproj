@@ -41,6 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A724F60208B7A51008FD946 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
+				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
+				4A724F55208B70D5008FD946 /* TasksTableViewController.swift */,
+				4A724F59208B771D008FD946 /* CreateTaskViewController.swift */,
+				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		4A7DF100208B64BA00E68B39 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +72,8 @@
 		4A7DF10B208B64BA00E68B39 /* Todoo */ = {
 			isa = PBXGroup;
 			children = (
+				4A724F60208B7A51008FD946 /* UI */,
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
-				4A724F55208B70D5008FD946 /* TasksTableViewController.swift */,
-				4A724F59208B771D008FD946 /* CreateTaskViewController.swift */,
-				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
-				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
-				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
 				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF11B208B64BB00E68B39 /* Info.plist */,
 				4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */,
