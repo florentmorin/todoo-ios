@@ -28,6 +28,7 @@
 		4A63F4BA208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		4A63F4C0208BBC7E0011B825 /* CreateTaskViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateTaskViewController+UIViewController.swift"; sourceTree = "<group>"; };
+		4A63F4C6208BC2D80011B825 /* Todoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Todoo.entitlements; sourceTree = "<group>"; };
 		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A724F55208B70D5008FD946 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		4A724F59208B771D008FD946 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		4A7DF10B208B64BA00E68B39 /* Todoo */ = {
 			isa = PBXGroup;
 			children = (
+				4A63F4C6208BC2D80011B825 /* Todoo.entitlements */,
 				4A63F4C4208BBEA10011B825 /* Core Data */,
 				4A724F60208B7A51008FD946 /* UI */,
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
@@ -168,6 +170,11 @@
 				TargetAttributes = {
 					4A7DF108208B64BA00E68B39 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -359,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Todoo/Todoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NZS5FJXF4;
 				INFOPLIST_FILE = Todoo/Info.plist;
@@ -378,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Todoo/Todoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9NZS5FJXF4;
 				INFOPLIST_FILE = Todoo/Info.plist;

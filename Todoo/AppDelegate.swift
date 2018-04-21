@@ -46,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data stack
 
+    var groupContainerURL: URL {
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.suptg.Todoo")!
+    }
+
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -54,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
         */
         let container = NSPersistentContainer(name: "Todoo")
+        let url = groupContainerURL.appendingPathComponent("Data.sqlite")
+        let description = NSPersistentStoreDescription(url:  url)
+
+        container.persistentStoreDescriptions = [description]
 
         let group = DispatchGroup()
 
