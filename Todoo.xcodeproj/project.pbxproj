@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */; };
-		4A7DF10F208B64BA00E68B39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF10E208B64BA00E68B39 /* ViewController.swift */; };
 		4A7DF112208B64BA00E68B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DF110208B64BA00E68B39 /* Main.storyboard */; };
 		4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */; };
 		4A7DF117208B64BB00E68B39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DF116208B64BB00E68B39 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		4A7DF109208B64BA00E68B39 /* Todoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A7DF10E208B64BA00E68B39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A7DF111208B64BA00E68B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A7DF114208B64BA00E68B39 /* Todoo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todoo.xcdatamodel; sourceTree = "<group>"; };
 		4A7DF116208B64BB00E68B39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
-				4A7DF10E208B64BA00E68B39 /* ViewController.swift */,
 				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
 				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
@@ -138,7 +135,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7DF10F208B64BA00E68B39 /* ViewController.swift in Sources */,
 				4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */,
 				4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */,
 			);
