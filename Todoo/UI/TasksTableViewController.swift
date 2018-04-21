@@ -81,60 +81,32 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         return cell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(
+            title: "Supprimer",
+            message: "Êtes-vous sûr de vouloir supprimer cette tâche ?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Annuler", style: .cancel) { _ in
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        let deleteAction = UIAlertAction(title: "Supprimer", style: .destructive) { _ in
+            self.deleteTask(at: indexPath)
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
 
+        present(alert, animated: true)
+    }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddTaskSegue",
             let nvc = segue.destination as? UINavigationController,
             let vc = nvc.viewControllers[0] as? CreateTaskViewController {
             vc.managedObjectContext = fetchedResultsController.managedObjectContext
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
     // MARK: - NSFetchedResultsControllerDelegate
@@ -162,16 +134,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .normal, title: "Supprimer") { action, index in
-            let object = self.fetchedResultsController.object(at: index)
-            let managedObjectContext = self.fetchedResultsController.managedObjectContext
-            managedObjectContext.delete(object)
-
-            do {
-                try managedObjectContext.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+            self.deleteTask(at: index)
         }
         deleteAction.backgroundColor = .red
 
@@ -180,5 +143,18 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+
+    private func deleteTask(at index: IndexPath) {
+        let object = self.fetchedResultsController.object(at: index)
+        let managedObjectContext = self.fetchedResultsController.managedObjectContext
+        managedObjectContext.delete(object)
+
+        do {
+            try managedObjectContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
     }
 }
