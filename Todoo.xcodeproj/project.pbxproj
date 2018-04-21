@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */; };
 		4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */; };
 		4A7DF112208B64BA00E68B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DF110208B64BA00E68B39 /* Main.storyboard */; };
 		4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A7DF109208B64BA00E68B39 /* Todoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A7DF111208B64BA00E68B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,9 +57,10 @@
 			isa = PBXGroup;
 			children = (
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
+				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
 				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
-				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
+				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF11B208B64BB00E68B39 /* Info.plist */,
 				4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */,
 			);
@@ -137,6 +140,7 @@
 			files = (
 				4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */,
 				4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */,
+				4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
