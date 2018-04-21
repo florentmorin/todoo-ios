@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,20 +54,78 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todoo" id="n4g-VU-mGq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbd-q9-5qC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbd-q9-5qC">
+                            <connections>
+                                <segue destination="g18-bH-pQe" kind="presentation" id="Puo-0d-QKW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hni-15-kmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023.2" y="142.57871064467767"/>
         </scene>
+        <!--Ajouter-->
+        <scene sceneID="baM-sp-5De">
+            <objects>
+                <viewController id="bpP-a9-aG6" customClass="CreateTaskViewController" customModule="Todoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DUv-cu-N0n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Définissez le contenu de votre tâche ci-dessous" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mch-MR-pA9">
+                                <rect key="frame" x="10" y="74" width="355" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jYc-Dx-ACJ">
+                                <rect key="frame" x="10" y="126.5" width="355" height="530.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mch-MR-pA9" firstAttribute="top" secondItem="lCZ-b2-yFg" secondAttribute="top" constant="10" id="7pZ-iP-iUs"/>
+                            <constraint firstItem="jYc-Dx-ACJ" firstAttribute="bottom" secondItem="lCZ-b2-yFg" secondAttribute="bottom" constant="-10" id="pEM-jw-M1x"/>
+                            <constraint firstItem="Mch-MR-pA9" firstAttribute="leading" secondItem="lCZ-b2-yFg" secondAttribute="leading" constant="10" id="q4F-8i-fii"/>
+                            <constraint firstItem="jYc-Dx-ACJ" firstAttribute="leading" secondItem="Mch-MR-pA9" secondAttribute="leading" id="r4g-VL-QCb"/>
+                            <constraint firstItem="jYc-Dx-ACJ" firstAttribute="trailing" secondItem="Mch-MR-pA9" secondAttribute="trailing" id="tdB-4p-MpE"/>
+                            <constraint firstItem="jYc-Dx-ACJ" firstAttribute="top" secondItem="Mch-MR-pA9" secondAttribute="bottom" constant="10" id="uZt-KG-tKH"/>
+                            <constraint firstItem="Mch-MR-pA9" firstAttribute="trailing" secondItem="lCZ-b2-yFg" secondAttribute="trailing" constant="-10" id="wdZ-Bn-oMf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lCZ-b2-yFg"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ajouter" id="SpO-Bs-gTX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dIG-ae-c7x">
+                            <connections>
+                                <action selector="onCancel:" destination="bpP-a9-aG6" id="lvr-Bo-HbK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="NPP-r8-fbx">
+                            <connections>
+                                <action selector="onSave:" destination="bpP-a9-aG6" id="uYf-Mg-x7v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailTextView" destination="jYc-Dx-ACJ" id="cGt-XD-LEV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NfB-2i-oOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="949"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="80o-lp-VcF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F9q-3s-V0F" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Moa-Jy-YKP">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Moa-Jy-YKP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -77,6 +136,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dev-70-C4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1962.4000000000001" y="142.57871064467767"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0sT-0F-Rxm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g18-bH-pQe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FRQ-0R-wed">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bpP-a9-aG6" kind="relationship" relationship="rootViewController" id="sJT-85-7YK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFd-sJ-srt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023" y="949"/>
         </scene>
     </scenes>
 </document>

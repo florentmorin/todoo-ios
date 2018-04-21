@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */; };
 		4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F55208B70D5008FD946 /* TasksTableViewController.swift */; };
+		4A724F5A208B771D008FD946 /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F59208B771D008FD946 /* CreateTaskViewController.swift */; };
 		4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */; };
 		4A7DF112208B64BA00E68B39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7DF110208B64BA00E68B39 /* Main.storyboard */; };
 		4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A724F55208B70D5008FD946 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		4A724F59208B771D008FD946 /* CreateTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		4A7DF109208B64BA00E68B39 /* Todoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A7DF111208B64BA00E68B39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
 				4A724F55208B70D5008FD946 /* TasksTableViewController.swift */,
+				4A724F59208B771D008FD946 /* CreateTaskViewController.swift */,
 				4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */,
 				4A7DF110208B64BA00E68B39 /* Main.storyboard */,
 				4A7DF118208B64BB00E68B39 /* LaunchScreen.storyboard */,
@@ -110,7 +113,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 4A7DF100208B64BA00E68B39;
@@ -145,6 +147,7 @@
 				4A7DF115208B64BA00E68B39 /* Todoo.xcdatamodeld in Sources */,
 				4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */,
 				4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */,
+				4A724F5A208B771D008FD946 /* CreateTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
