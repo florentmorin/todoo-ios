@@ -46,8 +46,7 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
             }
         }
 
-        // Uncomment the following line to preserve selection between presentations
-        self.clearsSelectionOnViewWillAppear = false
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,6 +79,16 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
         cell.taskDetail = task.detail
 
         return cell
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if segue.identifier == "AddTaskSegue",
+            let nvc = segue.destination as? UINavigationController,
+            let vc = nvc.viewControllers[0] as? CreateTaskViewController {
+            vc.managedObjectContext = fetchedResultsController.managedObjectContext
+        }
     }
 
     /*
@@ -127,4 +136,27 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     }
     */
 
+
+    // MARK: - NSFetchedResultsControllerDelegate
+
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            self.tableView.insertRows(at: [newIndexPath!], with: .automatic)
+        case .delete:
+            self.tableView.deleteRows(at: [indexPath!], with: .automatic)
+        case .update:
+            self.tableView.reloadRows(at: [indexPath!], with: .automatic)
+        default:
+            break
+        }
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
 }

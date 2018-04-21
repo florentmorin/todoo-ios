@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class CreateTaskViewController: UIViewController {
+
+    public var managedObjectContext: NSManagedObjectContext?
 
     // MARK: - IB Outlets
 
@@ -17,6 +20,26 @@ class CreateTaskViewController: UIViewController {
     // MARK: - IB Actions
 
     @IBAction func onSave(_ sender: Any) {
+        guard let managedObjectContext = managedObjectContext else {
+            self.presentingViewController?.dismiss(animated: true)
+
+            return
+        }
+
+        let detail = self.detailTextView.text
+
+        let task = Task(context: managedObjectContext)
+
+        task.createdAt = Date()
+        task.detail = detail
+
+        do {
+            try managedObjectContext.save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+
         self.presentingViewController?.dismiss(animated: true)
     }
 
@@ -28,8 +51,6 @@ class CreateTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
