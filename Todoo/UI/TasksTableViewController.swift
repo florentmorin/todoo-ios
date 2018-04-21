@@ -159,4 +159,26 @@ class TasksTableViewController: UITableViewController, NSFetchedResultsControlle
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Supprimer") { action, index in
+            let object = self.fetchedResultsController.object(at: index)
+            let managedObjectContext = self.fetchedResultsController.managedObjectContext
+            managedObjectContext.delete(object)
+
+            do {
+                try managedObjectContext.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+        deleteAction.backgroundColor = .red
+
+        return [deleteAction]
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
