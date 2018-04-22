@@ -13,6 +13,7 @@
 		4A63F4BE208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */; };
 		4A63F4C1208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4C0208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift */; };
 		4A63F4DA208CC9530011B825 /* Task+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4D9208CC9530011B825 /* Task+Requests.swift */; };
+		4A63F4DC208D22220011B825 /* AppDelegate+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4DB208D22220011B825 /* AppDelegate+Notifications.swift */; };
 		4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */; };
 		4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F55208B70D5008FD946 /* TasksTableViewController.swift */; };
 		4A724F5A208B771D008FD946 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F59208B771D008FD946 /* EditTaskViewController.swift */; };
@@ -31,6 +32,7 @@
 		4A63F4C0208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditTaskViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		4A63F4C6208BC2D80011B825 /* Todoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Todoo.entitlements; sourceTree = "<group>"; };
 		4A63F4D9208CC9530011B825 /* Task+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Requests.swift"; sourceTree = "<group>"; };
+		4A63F4DB208D22220011B825 /* AppDelegate+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Notifications.swift"; sourceTree = "<group>"; };
 		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A724F55208B70D5008FD946 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		4A724F59208B771D008FD946 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				4A63F4C4208BBEA10011B825 /* Core Data */,
 				4A724F60208B7A51008FD946 /* UI */,
 				4A7DF10C208B64BA00E68B39 /* AppDelegate.swift */,
+				4A63F4DB208D22220011B825 /* AppDelegate+Notifications.swift */,
 				4A7DF116208B64BB00E68B39 /* Assets.xcassets */,
 				4A7DF11B208B64BB00E68B39 /* Info.plist */,
 			);
@@ -241,6 +244,7 @@
 				4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */,
 				4A724F5A208B771D008FD946 /* EditTaskViewController.swift in Sources */,
 				4A63F4B9208BB37C0011B825 /* TasksTableViewController+UITableViewDelegate.swift in Sources */,
+				4A63F4DC208D22220011B825 /* AppDelegate+Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
