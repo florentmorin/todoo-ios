@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import Intents
 
 extension AppDelegate {
 
@@ -31,6 +32,8 @@ extension AppDelegate {
 
         center.requestAuthorization(options: options) { result, _ in
             // do what you want here ;-)
+            INPreferences.requestSiriAuthorization { _ in
+            }
         }
     }
 
