@@ -12,7 +12,7 @@ extension TasksTableViewController {
 
     // Actions to display on swiping row from right to left
     override func tableView(_ tableView: UITableView, editActionsForRowAt: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .normal, title: "Supprimer") { action, index in
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Terminé") { action, index in
             self.deleteTask(at: index)
         }
         deleteAction.backgroundColor = .red
@@ -22,8 +22,8 @@ extension TasksTableViewController {
 
     // Called when a table view is selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let title = "Supprimer"
-        let message = "Êtes-vous sûr de vouloir supprimer cette tâche ?"
+        let title = "Terminée"
+        let message = "Cette tâche peut-elle être supprimée ?"
         let alert = UIAlertController(
             title: title,
             message: message,
