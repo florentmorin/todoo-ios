@@ -15,6 +15,17 @@ import UIKit
  */
 class TaskTableViewCell: UITableViewCell {
 
+
+    public var taskDueDate: String? {
+        set {
+            self.dateLabel.text = newValue
+        }
+
+        get {
+            return self.dateLabel.text
+        }
+    }
+
     /// Detail of task
     public var taskDetail: String? {
         set {
@@ -25,6 +36,9 @@ class TaskTableViewCell: UITableViewCell {
             return self.label.text
         }
     }
+
+    /// Label for date
+    @IBOutlet private weak var dateLabel: UILabel!
 
     /// Label where text is displayed
     @IBOutlet private weak var label: UILabel!

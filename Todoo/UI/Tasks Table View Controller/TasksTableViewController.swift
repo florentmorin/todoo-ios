@@ -37,7 +37,7 @@ class TasksTableViewController: UITableViewController {
     fileprivate var fetchRequest: NSFetchRequest<Task> {
         let req: NSFetchRequest<Task> = Task.fetchRequest()
         let sd = NSSortDescriptor(
-            key: "createdAt",
+            key: "dueAt",
             ascending: true)
 
         req.sortDescriptors = [sd]
@@ -56,6 +56,16 @@ class TasksTableViewController: UITableViewController {
         fetchedResultsController.delegate = self
 
         return fetchedResultsController
+    }()
+
+    /// Date Formatter
+    internal lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+
+        return dateFormatter
     }()
 
     // MARK: - Internal methods

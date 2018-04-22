@@ -23,6 +23,9 @@ class CreateTaskViewController: UIViewController {
 
     // MARK: - IB Outlets
 
+    /// Date picker
+    @IBOutlet weak var datePicker: UIDatePicker!
+
     /// Text view
     @IBOutlet weak var detailTextView: UITextView!
 
@@ -39,7 +42,12 @@ class CreateTaskViewController: UIViewController {
         dismiss()
     }
 
-    // MARK: - Actions
+    /// Action on tap to background (ie. Scroll View)
+    @IBAction func tapOnBackground(_ sender: Any) {
+        detailTextView!.resignFirstResponder()
+    }
+
+    // MARK: - Action
 
     /// Save to Core Data
     fileprivate func save() {
@@ -49,10 +57,17 @@ class CreateTaskViewController: UIViewController {
             return
         }
 
-        let detail = self.detailTextView.text
+        let cs = CharacterSet.whitespacesAndNewlines
+
+        guard let detail = self.detailTextView.text?.trimmingCharacters(in: cs) else {
+            detailTextView!.becomeFirstResponder()
+
+            return
+        }
 
         let task = Task(context: moc)
 
+        task.dueAt = self.datePicker.date
         task.createdAt = Date()
         task.detail = detail
 

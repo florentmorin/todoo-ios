@@ -23,6 +23,7 @@ extension TasksTableViewController {
 
         let task = fetchedResultsController.object(at: indexPath)
 
+        cell.taskDueDate = dateFormatter.string(from: task.dueAt!)
         cell.taskDetail = task.detail
 
         return cell
