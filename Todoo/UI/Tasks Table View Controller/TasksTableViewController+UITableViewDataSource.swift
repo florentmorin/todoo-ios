@@ -23,7 +23,10 @@ extension TasksTableViewController {
 
         let task = fetchedResultsController.object(at: indexPath)
 
-        cell.taskDueDate = dateFormatter.string(from: task.dueAt!)
+        let dueDate = task.dueAt!
+
+        cell.expired = dueDate < Date()
+        cell.taskDueDate = dateFormatter.string(from: dueDate)
         cell.taskDetail = task.detail
 
         return cell

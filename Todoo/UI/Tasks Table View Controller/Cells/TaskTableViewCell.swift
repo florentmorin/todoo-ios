@@ -15,7 +15,18 @@ import UIKit
  */
 class TaskTableViewCell: UITableViewCell {
 
+    /// Is task expired
+    public var expired: Bool = false {
+        didSet {
+            if expired {
+                self.dateLabel.textColor = .red
+            } else {
+                self.dateLabel.textColor = .darkGray
+            }
+        }
+    }
 
+    /// Due date as String
     public var taskDueDate: String? {
         set {
             self.dateLabel.text = newValue
