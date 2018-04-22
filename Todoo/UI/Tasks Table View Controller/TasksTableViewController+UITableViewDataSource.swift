@@ -25,7 +25,7 @@ extension TasksTableViewController {
 
         let dueDate = task.dueAt!
 
-        cell.expired = dueDate < Date()
+        cell.expired = dueDate <= Date()
         cell.taskDueDate = dateFormatter.string(from: dueDate)
         cell.taskDetail = task.detail
 

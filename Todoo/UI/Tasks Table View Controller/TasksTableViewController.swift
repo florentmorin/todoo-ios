@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 /**
 
@@ -33,22 +34,10 @@ class TasksTableViewController: UITableViewController {
         return persistentContainer.viewContext
     }
 
-    /// Fetch Request that provide Tasks
-    fileprivate var fetchRequest: NSFetchRequest<Task> {
-        let req: NSFetchRequest<Task> = Task.fetchRequest()
-        let sd = NSSortDescriptor(
-            key: "dueAt",
-            ascending: true)
-
-        req.sortDescriptors = [sd]
-
-        return req
-    }
-
     /// Specified fetched results controller
     internal lazy var fetchedResultsController: NSFetchedResultsController<Task> = {
         let fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
+            fetchRequest: Task.defaultFetchRequest,
             managedObjectContext: managedObjectContext,
             sectionNameKeyPath: nil,
             cacheName: nil)
@@ -70,6 +59,9 @@ class TasksTableViewController: UITableViewController {
 
     /// Task to edit
     internal var taskToEdit: Task?
+
+    /// Task edition
+    internal var isTaskUpdateInProgress = false
 
     // MARK: - Internal methods
 
@@ -95,10 +87,17 @@ class TasksTableViewController: UITableViewController {
 
      */
     internal func deleteTask(at index: IndexPath) {
+        isTaskUpdateInProgress = true
         let task = fetchedResultsController.object(at: index)
         managedObjectContext.delete(task)
 
         try! managedObjectContext.save()
+
+        isTaskUpdateInProgress = false
+
+        let center = UNUserNotificationCenter.current()
+        let identifier = task.objectID.uriRepresentation().absoluteString
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
     }
 
 }

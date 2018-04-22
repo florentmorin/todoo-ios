@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension TasksTableViewController {
 
@@ -14,12 +15,41 @@ extension TasksTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.refreshControl = UIRefreshControl()
+
+        try! self.fetchedResultsController.performFetch()
+
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(didSaveContext), name: .NSManagedObjectContextDidSave, object: nil)
+
+        refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        isTaskUpdateInProgress = false
+    }
+
+    @objc fileprivate func refreshData(sender: Any) {
+        try! self.managedObjectContext.save()
+        try! self.fetchedResultsController.performFetch()
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+
+    @objc fileprivate func didSaveContext(notification: Notification) {
+        if isTaskUpdateInProgress {
+            return
+        }
+
         try! self.fetchedResultsController.performFetch()
     }
 
     // Used to prepare children view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "EditTaskSegue" {
+            isTaskUpdateInProgress = true
             prepareForEditTaskSegue(destination: segue.destination)
         }
     }

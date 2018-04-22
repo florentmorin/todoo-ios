@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 /**
 
@@ -78,6 +79,32 @@ class EditTaskViewController: UIViewController {
         task.detail = detail
 
         try! moc.save()
+
+        self.prepareNotification(for: task)
+    }
+
+    // Prepare notification
+    fileprivate func prepareNotification(for task: Task) {
+        let center = UNUserNotificationCenter.current()
+
+        let content = UNMutableNotificationContent()
+        content.title = "Todoo"
+        content.body = task.detail!
+        content.sound = UNNotificationSound.default()
+
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
+        let triggerDate = Calendar.current.dateComponents(components, from: task.dueAt!)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        let identifier = task.objectID.uriRepresentation().absoluteString
+
+        content.categoryIdentifier = "TaskCategory"
+
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+        center.add(request) { _ in
+        }
     }
 
     /// Dismiss from modal

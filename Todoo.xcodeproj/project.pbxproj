@@ -12,6 +12,7 @@
 		4A63F4BB208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4BA208BB4340011B825 /* TasksTableViewController+UITableViewDataSource.swift */; };
 		4A63F4BE208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */; };
 		4A63F4C1208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4C0208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift */; };
+		4A63F4DA208CC9530011B825 /* Task+Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A63F4D9208CC9530011B825 /* Task+Requests.swift */; };
 		4A724F52208B67C9008FD946 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */; };
 		4A724F56208B70D5008FD946 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F55208B70D5008FD946 /* TasksTableViewController.swift */; };
 		4A724F5A208B771D008FD946 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A724F59208B771D008FD946 /* EditTaskViewController.swift */; };
@@ -29,6 +30,7 @@
 		4A63F4BD208BB5DC0011B825 /* TasksTableViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TasksTableViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		4A63F4C0208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditTaskViewController+UIViewController.swift"; sourceTree = "<group>"; };
 		4A63F4C6208BC2D80011B825 /* Todoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Todoo.entitlements; sourceTree = "<group>"; };
+		4A63F4D9208CC9530011B825 /* Task+Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Requests.swift"; sourceTree = "<group>"; };
 		4A724F51208B67C9008FD946 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		4A724F55208B70D5008FD946 /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		4A724F59208B771D008FD946 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
@@ -94,9 +96,18 @@
 		4A63F4C4208BBEA10011B825 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				4A63F4D8208CC93C0011B825 /* Task */,
 				4A7DF113208B64BA00E68B39 /* Todoo.xcdatamodeld */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		4A63F4D8208CC93C0011B825 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				4A63F4D9208CC9530011B825 /* Task+Requests.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 		4A724F60208B7A51008FD946 /* UI */ = {
@@ -174,6 +185,12 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -213,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A63F4DA208CC9530011B825 /* Task+Requests.swift in Sources */,
 				4A63F4C1208BBC7E0011B825 /* EditTaskViewController+UIViewController.swift in Sources */,
 				4A7DF10D208B64BA00E68B39 /* AppDelegate.swift in Sources */,
 				4A63F4B7208BB3110011B825 /* TasksTableViewController+NSFetchedResultsControllerDelegate.swift in Sources */,
@@ -368,14 +386,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Todoo/Todoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9NZS5FJXF4;
+				DEVELOPMENT_TEAM = A5BPRXNG6L;
 				INFOPLIST_FILE = Todoo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.suptgniort.Todoo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morin-innovation.Todoo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -388,14 +406,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Todoo/Todoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9NZS5FJXF4;
+				DEVELOPMENT_TEAM = A5BPRXNG6L;
 				INFOPLIST_FILE = Todoo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.suptgniort.Todoo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.morin-innovation.Todoo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
