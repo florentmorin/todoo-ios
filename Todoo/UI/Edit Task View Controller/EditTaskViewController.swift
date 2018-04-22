@@ -1,5 +1,5 @@
 //
-//  CreateTaskViewController.swift
+//  EditTaskViewController.swift
 //  Todoo
 //
 //  Created by Florent Morin on 21/04/2018.
@@ -14,12 +14,19 @@ import CoreData
  View for creating task
 
  */
-class CreateTaskViewController: UIViewController {
+class EditTaskViewController: UIViewController {
 
     // MARK: Core Data stack
 
     /// Managed object context provided by caller
     public var managedObjectContext: NSManagedObjectContext?
+
+    /// Task to edit
+    public var task: Task? {
+        didSet {
+            updateUI()
+        }
+    }
 
     // MARK: - IB Outlets
 
@@ -65,10 +72,9 @@ class CreateTaskViewController: UIViewController {
             return
         }
 
-        let task = Task(context: moc)
+        let task = self.task ?? Task(context: moc)
 
         task.dueAt = self.datePicker.date
-        task.createdAt = Date()
         task.detail = detail
 
         try! moc.save()
@@ -77,6 +83,24 @@ class CreateTaskViewController: UIViewController {
     /// Dismiss from modal
     fileprivate func dismiss() {
         presentingViewController?.dismiss(animated: true)
+    }
+
+    /// Update UI if necessary
+    internal func updateUI() {
+        if let task = task {
+            let dueDate = task.dueAt!
+            let now = Date()
+            title = "Modifier"
+            detailTextView?.text = task.detail
+            datePicker?.minimumDate = now > dueDate ? dueDate : now
+            datePicker?.date = dueDate
+        } else {
+            title = "Ajouter"
+            detailTextView?.text = nil
+            datePicker?.minimumDate = Date()
+            datePicker?.date = Date().addingTimeInterval(3600.0)
+
+        }
     }
 
 }

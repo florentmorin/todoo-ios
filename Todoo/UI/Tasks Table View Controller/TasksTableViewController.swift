@@ -68,7 +68,23 @@ class TasksTableViewController: UITableViewController {
         return dateFormatter
     }()
 
+    /// Task to edit
+    internal var taskToEdit: Task?
+
     // MARK: - Internal methods
+
+    /**
+
+     Update task at specified index.
+
+     - Parameters:
+     - index: index path of task that need to be updated
+
+     */
+    internal func updateTask(at index: IndexPath) {
+        taskToEdit = fetchedResultsController.object(at: index)
+        performSegue(withIdentifier: "EditTaskSegue", sender: nil)
+    }
 
     /**
 

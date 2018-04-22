@@ -19,8 +19,8 @@ extension TasksTableViewController {
 
     // Used to prepare children view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddTaskSegue" {
-            self.prepareForAddTaskSegue(destination: segue.destination)
+        if segue.identifier  == "EditTaskSegue" {
+            prepareForEditTaskSegue(destination: segue.destination)
         }
     }
 
@@ -34,13 +34,16 @@ extension TasksTableViewController {
         - destination: View controller to prepare
 
     */
-    fileprivate func prepareForAddTaskSegue(destination: UIViewController) {
+    fileprivate func prepareForEditTaskSegue(destination: UIViewController) {
         guard let nvc = destination as? UINavigationController,
-            let vc = nvc.viewControllers[0] as? CreateTaskViewController  else {
+            let vc = nvc.viewControllers[0] as? EditTaskViewController  else {
                 return
         }
 
         vc.managedObjectContext = fetchedResultsController.managedObjectContext
+        vc.task = taskToEdit
+
+        taskToEdit = nil
     }
 
 }

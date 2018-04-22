@@ -19,24 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="64" id="Ece-5u-Um2" customClass="TaskTableViewCell" customModule="Todoo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="64" id="Ece-5u-Um2" customClass="TaskTableViewCell" customModule="Todoo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ece-5u-Um2" id="6hO-eU-lM3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="327" height="63.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OV1-zW-ybF">
-                                            <rect key="frame" x="10" y="10" width="355" height="43.666666666666664"/>
+                                            <rect key="frame" x="10" y="10" width="307" height="43.666666666666664"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pc-jK-GBz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="307" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malesuada Nibh Dapibus Mollis Ullamcorper" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMz-ru-Xo0">
-                                                    <rect key="frame" x="0.0" y="23.333333333333336" width="355" height="20.333333333333336"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Malesuada Nibh Dapibus Mollis Ullamcorper" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMz-ru-Xo0">
+                                                    <rect key="frame" x="0.0" y="23" width="307" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Todoo" id="n4g-VU-mGq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbd-q9-5qC">
                             <connections>
-                                <segue destination="g18-bH-pQe" kind="presentation" identifier="AddTaskSegue" id="Puo-0d-QKW"/>
+                                <segue destination="g18-bH-pQe" kind="presentation" identifier="EditTaskSegue" id="BIg-pI-mtg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -79,7 +79,7 @@
         <!--Ajouter-->
         <scene sceneID="baM-sp-5De">
             <objects>
-                <viewController id="bpP-a9-aG6" customClass="CreateTaskViewController" customModule="Todoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bpP-a9-aG6" customClass="EditTaskViewController" customModule="Todoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DUv-cu-N0n">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

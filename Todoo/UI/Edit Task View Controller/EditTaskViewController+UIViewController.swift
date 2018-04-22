@@ -8,14 +8,13 @@
 
 import UIKit
 
-extension CreateTaskViewController {
+extension EditTaskViewController {
 
     // Called once loaded
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        datePicker.minimumDate = Date()
-        datePicker.date = Date().addingTimeInterval(3600.0)
+        updateUI()
     }
 
     // Called when view appear

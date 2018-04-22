@@ -17,7 +17,17 @@ extension TasksTableViewController {
         }
         deleteAction.backgroundColor = .red
 
-        return [deleteAction]
+        let editAction = UITableViewRowAction(style: .normal, title: "Modifier") { action, index in
+            self.updateTask(at: index)
+        }
+        editAction.backgroundColor = .lightGray
+
+        return [deleteAction, editAction]
+    }
+
+    // Table view accessory selected
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        updateTask(at: indexPath)
     }
 
     // Called when a table view is selected
