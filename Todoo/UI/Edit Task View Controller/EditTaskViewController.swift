@@ -88,7 +88,7 @@ class EditTaskViewController: UIViewController {
         let center = UNUserNotificationCenter.current()
 
         let content = UNMutableNotificationContent()
-        content.title = "Todoo"
+        content.title = "Rappel"
         content.body = task.detail!
         content.sound = UNNotificationSound.default()
 

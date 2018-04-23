@@ -40,7 +40,7 @@ extension AppDelegate {
     /// Create a notification request from a badge
     fileprivate func createNotificationRequest(with task: Task, badge: Int) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
-        content.title = "Todoo"
+        content.title = "Rappel"
         content.body = task.detail!
         content.sound = UNNotificationSound.default()
         content.badge = badge as NSNumber
