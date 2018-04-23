@@ -84,11 +84,6 @@ class IntentHandler: INExtension, INAddTasksIntentHandling, INCreateTaskListInte
     // MARK: - INSetTaskAttributeIntentHandling
 
     func handle(intent: INSetTaskAttributeIntent, completion: @escaping (INSetTaskAttributeIntentResponse) -> Void) {
-        guard let title = intent.targetTask?.title else {
-            completion(INSetTaskAttributeIntentResponse(code: .failure, userActivity: nil))
-            return
-        }
-
         let status = intent.status
 
         if status == .completed {

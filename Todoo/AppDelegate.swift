@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - App life cycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UINavigationBar.appearance().tintColor = UIColor(named: "MainColor")
         prepareForReceivingNotifications()
 
         return true
