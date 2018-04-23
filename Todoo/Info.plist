@@ -30,6 +30,18 @@
 	<array>
 		<dict>
 			<key>INAlternativeAppName</key>
+			<string>Doudou</string>
+			<key>INAlternativeAppNamePronunciationHint</key>
+			<string>Doudou</string>
+		</dict>
+		<dict>
+			<key>INAlternativeAppName</key>
+			<string>Toudous</string>
+			<key>INAlternativeAppNamePronunciationHint</key>
+			<string>Toudou</string>
+		</dict>
+		<dict>
+			<key>INAlternativeAppName</key>
 			<string>Toudou</string>
 			<key>INAlternativeAppNamePronunciationHint</key>
 			<string>Toudou</string>
