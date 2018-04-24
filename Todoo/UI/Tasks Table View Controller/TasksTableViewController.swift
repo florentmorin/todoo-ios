@@ -70,7 +70,7 @@ class TasksTableViewController: UITableViewController {
      Update task at specified index.
 
      - Parameters:
-     - index: index path of task that need to be updated
+        - index: index path of task that need to be updated
 
      */
     internal func updateTask(at index: IndexPath) {
